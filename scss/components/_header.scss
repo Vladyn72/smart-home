@@ -1,0 +1,81 @@
+.header {
+  &__container {
+    @extend %flexSpaceBetween;
+    padding-top: calculateRem(36);
+    margin-bottom: calculateRem(96);
+  }
+
+  &::before {
+    content: '';
+    background: #1c57c9;
+    @include media(width, (1000px, 1000px, 100%));
+    height: 800px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    border-radius: 0px 0px 400px 0px;
+  }
+
+  &__menu-button {
+    display: none;
+    @include fontStyle(calculateRem(15), bold, calculateRem(18));
+    padding: 9px 20px;
+    transition: 0.3s ease;
+    &:hover {
+      @include hoverEffect($green, white);
+    }
+  }
+}
+
+.logo {
+  @extend %flexCenter;
+  &__image {
+    width: 42px;
+    height: 42px;
+  }
+
+  &__title {
+    @include fontStyle(calculateRem(22), bold, calculateRem(27));
+    display: block;
+    font-family: 'Inter';
+    margin-left: 12px;
+  }
+}
+
+.nav {
+  @extend %flexSpaceBetween;
+  margin-right: auto;
+  margin-left: calculateRem(96);
+
+  &__link {
+    @include fontStyle(calculateRem(15), bold, calculateRem(18));
+    opacity: 0.6;
+    color: white;
+    transition: 0.4s ease;
+
+    &:hover {
+      opacity: 1;
+      font-weight: bold;
+    }
+
+    &:not(:last-child) {
+      margin-right: 42px;
+    }
+  }
+}
+
+.signin {
+  &__title {
+    @include fontStyle(calculateRem(13), bold, calculateRem(16));
+    @include media(color, (#262b35, #262b35, white));
+
+    &--green {
+      color: $green;
+    }
+
+    &--black {
+      margin-right: 25px;
+    }
+  }
+}

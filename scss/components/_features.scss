@@ -1,0 +1,112 @@
+.features {
+  &__container {
+    @extend %flexSpaceBetween;
+    margin-bottom: calculateRem(140);
+  }
+
+  &__img {
+    position: relative;
+  }
+
+  &__icon {
+    width: 380px;
+    height: 390px;
+  }
+}
+
+.message {
+  position: absolute;
+  border-radius: 5px;
+  padding: 9px 13px;
+  max-width: 220px;
+  background: white;
+  box-shadow: 0px 12px 48px rgba(44, 45, 49, 0.16);
+
+  &--1 {
+    right: -50px;
+    top: 60px;
+  }
+  &--2 {
+    top: 120px;
+    left: -20px;
+  }
+  &--3 {
+    left: 0px;
+    bottom: 100px;
+  }
+  &--4 {
+    right: 0px;
+    bottom: -30px;
+  }
+
+  &__text {
+    @include fontStyle(calculateRem(13), 400, calculateRem(20));
+    color: $black;
+  }
+}
+
+.content {
+  max-width: 600px;
+  &__subtitle {
+    margin-bottom: calculateRem(16);
+  }
+
+  &__title {
+    margin-bottom: calculateRem(24);
+  }
+
+  &__text {
+    max-width: 600px;
+    @include fontStyle(calculateRem(18px), 400, calculateRem(24));
+    color: $grey;
+    margin-bottom: calculateRem(60);
+  }
+
+  &__advantages {
+    @extend %flexSpaceBetween;
+    flex-wrap: wrap;
+  }
+}
+
+$colors: (
+  alarm: rgba(241, 193, 201, 0.6),
+  diagnostic: rgba(197, 215, 242, 0.6),
+  insurance: rgba(197, 242, 220, 0.6),
+  support: rgba(250, 227, 175, 0.6),
+);
+
+.advantage {
+  flex-basis: 45%;
+
+  &:nth-of-type(1) {
+    margin-bottom: calculateRem(60);
+  }
+
+  &:nth-of-type(2) {
+    margin-bottom: calculateRem(60);
+  }
+
+  &__title {
+    color: $black;
+    margin-bottom: calculateRem(16);
+  }
+
+  &__text {
+    color: $grey;
+    max-width: 260px;
+  }
+
+  &__cover {
+    @extend %flexCenter;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin-bottom: calculateRem(36);
+  }
+
+  @each $advantage, $color in $colors {
+    &__#{$advantage} {
+      background: #{$color};
+    }
+  }
+}

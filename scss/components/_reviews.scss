@@ -1,0 +1,79 @@
+.reviews {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) -15.97%, #ecf0f7 100%);
+  margin-bottom: calculateRem(180);
+
+  &__subtitle {
+    margin-bottom: calculateRem(17);
+  }
+
+  &__title {
+    width: 100%;
+    max-width: 536px;
+    margin: auto;
+    margin-bottom: calculateRem(60);
+  }
+
+  &__wrapper {
+    padding: 70px 0px;
+  }
+
+  &__icon {
+    min-width: 42px;
+    min-height: 42px;
+    &--prev {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.slide {
+  background: white;
+  min-width: 540px;
+  box-shadow: 0px 20px 48px rgba(0, 0, 0, 0.06);
+  min-height: 260px;
+  padding: 30px;
+  position: relative;
+  border-radius: 24px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    min-width: 74px;
+    min-height: 64px;
+    background-image: url('../img/quote.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0 0;
+  }
+
+  &__user {
+    width: 74px;
+    height: 74px;
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__text {
+    @include fontStyle(calculateRem(20), 400, calculateRem(26));
+    color: $black;
+    max-width: 420px;
+    margin-bottom: calculateRem(40);
+  }
+
+  &__info {
+  }
+
+  &__name {
+    color: $black;
+    margin-bottom: calculateRem(10);
+  }
+
+  &__profession {
+    color: $grey;
+  }
+}

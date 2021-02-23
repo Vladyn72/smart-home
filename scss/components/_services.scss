@@ -1,0 +1,77 @@
+.services {
+  &__container {
+    text-align: center;
+  }
+
+  &__subtitle {
+    margin-bottom: calculateRem(16);
+  }
+
+  &__title {
+    margin-bottom: calculateRem(24);
+  }
+
+  &__list {
+    @extend %flexSpaceBetween;
+    flex-wrap: wrap;
+    margin-bottom: calculateRem(160);
+  }
+
+  &__text {
+    margin-bottom: calculateRem(50);
+    color: $grey;
+  }
+
+  &__pagination {
+    position: relative;
+    top: 200px;
+  }
+}
+
+.list {
+  &__wrapper {
+    padding: 70px 0px;
+  }
+}
+
+$colors: (
+  1: rgba(241, 193, 201, 0.6),
+  2: rgba(197, 215, 242, 0.6),
+  3: rgba(197, 242, 220, 0.6),
+  4: rgba(250, 227, 175, 0.6),
+  5: rgba(241, 193, 201, 0.6),
+  6: rgba(197, 215, 242, 0.6),
+  7: rgba(197, 242, 220, 0.6),
+  8: rgba(250, 227, 175, 0.6),
+  9: rgba(241, 193, 201, 0.6),
+);
+
+.service {
+  @extend %flexSpaceBetween;
+  justify-content: flex-start;
+  padding: 20px 24px;
+  min-width: 320px;
+  height: 96px;
+  box-shadow: 0px 6px 48px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  text-align: left;
+  // margin-bottom: calculateRem(25);
+
+  &__cover {
+    @extend %flexCenter;
+    min-width: 55px;
+    min-height: 55px;
+    border-radius: 50%;
+    margin-right: 30px;
+
+    @each $service, $color in $colors {
+      &--#{$service} {
+        background: $color;
+      }
+    }
+  }
+
+  &__title {
+    color: $black;
+  }
+}

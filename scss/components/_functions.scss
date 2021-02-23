@@ -1,0 +1,43 @@
+@function calculateRem($value) {
+  $result: $value / 16;
+  @return $result + rem;
+}
+
+@mixin hoverEffect($fontColor, $bgColor) {
+  color: $fontColor;
+  background: $bgColor;
+}
+
+@mixin fontStyle($size, $weight, $height) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $height;
+  margin: 0px;
+}
+
+$screens: (all, 1440, 1190, 920, 800, 600);
+@mixin media($property, $values) {
+  @for $i from 1 through length($values) {
+    @if nth($values, $i) != '' {
+      @if nth($screens, $i) == 'all' {
+        #{$property}: unquote(#{nth($values, $i)});
+      } @else {
+        @media screen and (max-width: nth($screens, $i) + 'px') {
+          #{$property}: unquote(#{nth($values, $i)});
+        }
+      }
+    }
+  }
+}
+
+%flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%flexSpaceBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

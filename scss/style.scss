@@ -1,0 +1,80 @@
+@import './components/functions';
+@import './components/variables';
+
+*,
+::before,
+::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: sans-serif;
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.container {
+  // max-width: 1150px;
+  @include media(max-width, (1150px, 1150px, 900px, 780px, 580px, 85%));
+  margin: auto;
+}
+
+.button {
+  all: initial;
+  cursor: pointer;
+  outline: none;
+  color: inherit;
+  border: 1px solid white;
+  font-family: inherit;
+  border-radius: 3px;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+}
+
+.section {
+  &__title {
+    @include fontStyle(calculateRem(42), bold, calculateRem(50));
+    letter-spacing: -0.02em;
+    color: $black;
+    text-align: center;
+  }
+
+  &__subtitle {
+    display: block;
+    color: $blue;
+    @include fontStyle(calculateRem(15px), bold, calculateRem(18px));
+    letter-spacing: 0.6em;
+    text-transform: uppercase;
+    color: #1c57c9;
+    text-align: center;
+  }
+
+  &__small-title {
+    @include fontStyle(calculateRem(18), 600, calculateRem(24));
+  }
+
+  &__text {
+    @include fontStyle(calculateRem(15), 400, calculateRem(21));
+  }
+}
+
+@import './components/header';
+@import './components/first-screen';
+@import './components/menu';
+@import './components/features';
+@import './components/update';
+@import './components/services';
+@import './components/reviews';
+@import './components/contact';
+@import './components/media';

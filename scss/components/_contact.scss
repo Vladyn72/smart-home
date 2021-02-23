@@ -1,0 +1,71 @@
+.contact {
+  &__container {
+    @extend %flexSpaceBetween;
+    align-items: flex-start;
+    margin-bottom: calculateRem(60);
+  }
+
+  &__subtitle {
+    text-align: left;
+    color: $blue;
+    margin-bottom: calculateRem(16);
+  }
+
+  &__title {
+    text-align: left;
+    color: $black;
+    max-width: 425px;
+    margin-bottom: calculateRem(40);
+  }
+
+  &__icon {
+    width: 410px;
+    height: 360px;
+  }
+}
+
+.form {
+  width: 420px;
+
+  &__label {
+    display: block;
+    width: 100%;
+    @include fontStyle(calculateRem(16), 400, calculateRem(19));
+    color: $black;
+    margin-bottom: calculateRem(14);
+  }
+
+  &__input {
+    width: 100%;
+    height: 44px;
+    padding: 10px 20px;
+    @include fontStyle(calculateRem(18), 400, calculateRem(22));
+    color: #cccccc;
+    outline: none;
+    background: transparent;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    margin-bottom: calculateRem(16);
+  }
+
+  &__textarea {
+    font-family: inherit;
+    padding: 10px 20px;
+    @include fontStyle(calculateRem(18), 400, calculateRem(22));
+    color: #cccccc;
+    outline: none;
+    background: transparent;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    width: 100%;
+    height: 96px;
+    resize: none;
+    margin-bottom: calculateRem(36);
+  }
+
+  &__button {
+    margin: 0px;
+    background: $green;
+    padding: 13px 37px;
+  }
+}
